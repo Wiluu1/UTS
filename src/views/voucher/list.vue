@@ -43,7 +43,6 @@
                             <td class="center">{{ item.voucher_name }}</td>
                             <td class="center" ><label class="label-green">{{ item.valid_from }}</label></td>
                             <td class="center" ><label class="label-green">{{ item.valid_until }}</label></td>
-                            
                             <td class="center">
                                 <div v-if="item.status === 1">
                                     <label class="label-green">Active</label>
@@ -77,11 +76,13 @@
 
 <script>
 import Menu from "../../components/menu.vue"
+import Ditel from "../voucher/detail.vue"
 
 export default {
 	name: 'list-user',
 	components: {
-		Menu
+		Menu,
+        Ditel,
 	},
     data(){
         return {
@@ -92,8 +93,8 @@ export default {
                     voucher_name: "Wily",
                     valid_from: "20-11-2023",
                     valid_until: "25-11-2023",
-                    status: 1
-                  
+                    status: 1,
+                    urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
                     id: "1",
@@ -101,7 +102,9 @@ export default {
                     voucher_name: "Ramadhan",
                     valid_from: "20-11-2023",
                     valid_until: "25-11-2023",
-                    status: 2
+                    status: 2,
+                    urlImg: '../../assets/icons/dcsopi.jpg'
+                    
                 },
                 {
                     id: "1",
@@ -109,7 +112,8 @@ export default {
                     voucher_name: "Taufiq",
                     valid_from: "20-11-2023",
                     valid_until: "25-11-2023",
-                    status: 1
+                    status: 1,
+                    urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
                     id: "1",
@@ -117,7 +121,8 @@ export default {
                     voucher_name: "Yuriza",
                     valid_from: "20-11-2023",
                     valid_until: "25-11-2023",
-                    status: 2
+                    status: 2,
+                    urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
                     id: "1",
@@ -125,7 +130,8 @@ export default {
                     voucher_name: "Danis",
                     valid_from: "20-11-2023",
                     valid_until: "25-11-2023",
-                    status: 1
+                    status: 1,
+                    urlImg: '../../assets/icons/dcsopi.jpg'
                 }
             ]
         }

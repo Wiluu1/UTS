@@ -15,7 +15,7 @@
             <hr class="uline-grey">
             <div class="mt50">
                 <p>Name:</p>
-                <h2>Vioni Wita Elya</h2>
+                <h2>a</h2>
             </div>
             <div class="mt10">
                 <p class="detail-title-bold">Username:</p>
@@ -34,7 +34,10 @@
 </template>
 
 <script>
+import List from "../voucher/list.vue"
+
 export default {
-	name: 'detail-user'
+	name: 'detail-user',
+    List,
 }
 </script>

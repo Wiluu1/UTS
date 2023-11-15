@@ -17,9 +17,8 @@
                 <div class="w20">
                     <label class="form-label">Voucher Image</label>
                 </div>
-                <div class="voucher-image gg">
-                    <label for=""><i class="gg"></i></label>
-                    <input type="file" >
+                <div class="voucher-image gg" :style="{ backgroundImage: 'url(' + (imageUrl || defaultImageUrl) + ')'}">
+                        <input  type="file" @change="handleFileChange" id="iF" >
                 </div>
             </div>
             <div class="mt50 row">
@@ -147,7 +146,10 @@
                 inputText3: '',
                 letterCount: 0,
                 letterCount2: 0,
-                letterCount3: 0
+                letterCount3: 0,
+                file:'',
+                imageUrl: null,
+                defaultImageUrl: require('../../assets/icons/addimg.jpeg')
                 
             };
         }, 
@@ -166,6 +168,12 @@
             }
         },
         methods: {
+            changeFile() {
+                let file = e.target.files[0];
+                this.file = file;
+                console.log(this.file);
+            },
+
             countLetters() {
                 this.letterCount = this.inputText.length;   
             },
@@ -174,7 +182,16 @@
             },
             countLetters3() {
                 this.letterCount3 = this.inputText3.length; 
-            }
+            },
+
+            handleFileChange(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    this.imageUrl = URL.createObjectURL(file);
+                } else {
+                    this.imageUrl = null; // Atur ke null jika tidak ada gambar yang dipilih
+                }
+            },
         }
 	  
 
@@ -187,6 +204,11 @@
 
 
 <style>
+.border{    
+  background-size: cover;
+  margin: 0 auto;
+}
+
 .p-kanan{
     font-family: sans-serif;
     z-index: 1;
@@ -213,6 +235,7 @@
 input[type="file"] {
    content: "";
    opacity: 0;
+   width: 80px;
    height: 80px;
 }
 
@@ -226,10 +249,10 @@ input[type="file"] {
 }
 
 .gg{
-    background-image: url(' ../../assets/icons/addimg.jpeg');
-    background-position: center;
+    background-image: url('../../assets/icons/addimg.jpeg');
     background-repeat: no-repeat;
-    background-size: 100px;
+    background-size: cover;
+    
 }
 
 .offappea{
