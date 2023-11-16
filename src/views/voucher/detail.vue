@@ -9,13 +9,15 @@
                 </div>
                 <div>
                     <h1 class="m0">Detail Voucher</h1>
-                    <p class="mt5 mb20 tc-green">Your user details</p>
+                    <p class="mt5 mb20 tc-green">Your voucher details</p>
                 </div>
             </div>
             <hr class="uline-grey">
             <div class="mt50">
-                <p>Name:</p>
-                <h2>a</h2>
+                <p>
+                    <img src="../../components/voucherimage.jpeg" width="25%">
+
+                </p>
             </div>
             <div class="mt10">
                 <p class="detail-title-bold">Username:</p>
