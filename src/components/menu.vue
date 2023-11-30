@@ -4,21 +4,21 @@
             <div class="col center">
                 <router-link to="/list-user" @click.native="handleClick('use')">
                     <div  >
-                        User<hr  :class="{ 'uline-green': activeMenu === 'use', 'uline-grey': activeMenu !== 'use' }" >
+                        User<hr  :class="{ 'uline-green': $store.state.activeMenu === 'use', 'uline-grey': $store.state.activeMenu !== 'use' }" >
                     </div>
                 </router-link>
             </div>
             <div class="col center">
                 <router-link to="/list-voucher" @click.native="handleClick('pr')">
                     <div >
-                        Product<hr :class="{ 'uline-green': activeMenu === 'pr', 'uline-grey': activeMenu !== 'pr' }">
+                        Product<hr :class="{ 'uline-green': $store.state.activeMenu === 'pr', 'uline-grey': $store.state.activeMenu !== 'pr' }">
                     </div>
                 </router-link>
             </div>
             <div class="col center">
                 <router-link to="/list-voucher" @click.native="handleClick('vo')">
                     <div >
-                        Voucher<hr  :class="{ 'uline-green': activeMenu === 'vo', 'uline-grey': activeMenu !== 'vo' }">
+                        Voucher<hr  :class="{ 'uline-green': $store.state.activeMenu === 'vo', 'uline-grey': $store.state.activeMenu !== 'vo' }">
                     </div>
                 </router-link>
             </div>
@@ -65,18 +65,23 @@
         name: 'Menu',
         data(){
             return {
-                activeMenu: "use",
+           
                 klik: true,
             }
         },
         
         methods: {
             handleClick(menu) {
-                this.activeMenu = menu
-                console.log(this.activeMenu)
+                this.$store.dispatch('setActiveMenu', menu);
+                console.log(this.$store.state.activeMenu);
             },
             isActive(menu) {
-                return this.$store.state.activeMenu === menu;
+                this.$store.commit('setActiveMenu', menu);
+            },
+        },
+        computed: {
+            activeMenu() {
+                return this.$store.getters.activeMenu;
             },
         },
     }

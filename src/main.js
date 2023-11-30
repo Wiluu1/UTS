@@ -14,7 +14,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
+    render: h => h(App),
     store,router,
     template: '<App/>',
     components: { App }
-})
+}).$mount('#app');
