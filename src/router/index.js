@@ -27,12 +27,12 @@ export default new Router({
 			component: Product
 		},
 		{
-			path: '/',
+			path: '/list-user',
 			name: 'list-user',
 			component: User
 		},
 		{
-			path: '/list-user',
+			path: '/',
 			name: 'list-user',
 			component: User
 		},

@@ -55,7 +55,6 @@
                 </div>
                 <div class="w80">
                     <textarea 
-
                     v-model="inputText3" :maxlength="500"
                     class=" form-text description-textarea" 
                     placeholder="Masukan voucher description"></textarea>
