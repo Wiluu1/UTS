@@ -90,23 +90,23 @@ export default {
                     id: "1",
                     voucher_code: "ABC123",
                     voucher_name: "Wily",
-                    valid_from: "2023-11-25",
-                    valid_until: "2023-12-25",
+                    valid_from: "25-11-2023",
+                    valid_until: "25-12-2023",
                     status: 'Active',
                     urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
-                    id: "1",
+                    id: "2",
                     voucher_code: "ABC123",
                     voucher_name: "Ramadhan",
-                    valid_from: "2023-11-25",
-                    valid_until: "2023-11-26",
+                    valid_from: "25-11-2023",
+                    valid_until: "25-12-2023",
                     status: 'Active',
                     urlImg: '../../assets/icons/dcsopi.jpg'
                     
                 },
                 {
-                    id: "1",
+                    id: "3",
                     voucher_code: "ABC123",
                     voucher_name: "Taufiq",
                     valid_from: "20-11-2023",
@@ -115,7 +115,7 @@ export default {
                     urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
-                    id: "1",
+                    id: "4",
                     voucher_code: "ABC123",
                     voucher_name: "Yuriza",
                     valid_from: "20-11-2023",
@@ -124,7 +124,7 @@ export default {
                     urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
-                    id: "1",
+                    id: "5",
                     voucher_code: "ABC123",
                     voucher_name: "Danis",
                     valid_from: "20-11-2023",
@@ -134,17 +134,6 @@ export default {
                 }
             ]
         }
-    }
-}
-function validateVoucher(){
-    var tanggalTenggang = new Date(document.getElementById('valid_until').value);
-    var statusVoucher = document.getElementById('status').value;
-    var today = new Date();
-
-    if(tanggalTenggang <= today){
-        statusVoucher === 'Inactive';
-    }else{
-        statusVoucher === 'Active';
     }
 }
 </script>
