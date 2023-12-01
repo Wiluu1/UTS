@@ -76,13 +76,12 @@
 
 <script>
 import Menu from "../../components/menu.vue"
-import Ditel from "../voucher/detail.vue"
+
 
 export default {
-	name: 'list-user',
+	name: 'list-voucher',
 	components: {
 		Menu,
-        Ditel,
 	},
     data(){
         return {

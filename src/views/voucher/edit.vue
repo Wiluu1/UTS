@@ -26,12 +26,13 @@
                     <label class="form-label">Voucher Code</label>
                 </div>
                 <div class="w80">
-                    <input
-                        class="form-text"
-                        type="text"
-                        placeholder="Input your username"
-                    >
-                    <div class="p-kanan" >| {{ letterCount }}/6</div> 
+                    <input 
+                            id="txt" 
+                            v-model="inputText" :maxlength="6"
+                            class="form-text txt" 
+                            type="text" 
+                            placeholder="Input your full name" disabled>
+                            <div class="p-kanan" >| {{ letterCount }}/6</div>  
                 </div>
             </div>
             <div class="mt30 row">
@@ -44,6 +45,7 @@
                         type="text"
                         placeholder="Input your email"
                     >
+                    
                     <div class="p-kanan" >| {{ letterCount }}/6</div> 
                 </div>
             </div>
@@ -137,27 +139,57 @@
 import List from "../voucher/list.vue"
 
 export default {
+    components:{
+       List
+    },
     data(){
         return{
             name: 'detail-voucher',
             imageUrl: null,
+            letterCount: 0,
+            letterCount2: 0,
+            letterCount3: 0,
             defaultImageUrl: require('../../assets/icons/addimg.jpeg'),
         }
     },
-	
-
     methods: {
-        handleFileChange(event) {
-            const file = event.target.files[0];
-            if (file) {
-                this.imageUrl = URL.createObjectURL(file);
-            } else {
-                this.imageUrl = null; // Atur ke null jika tidak ada gambar yang dipilih
+            handleFileChange(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    this.imageUrl = URL.createObjectURL(file);
+                } else {
+                    this.imageUrl = null; // Atur ke null jika tidak ada gambar yang dipilih
+                }
+            },
+        },
+    watch: {
+            inputText() {
+                this.countLetters();          
+            },
+            inputText2() {
+                this.countLetters2();
+            },
+            inputText3() {
+                this.countLetters3();
             }
         },
-    }
+    methods: {
+            changeFile() {
+                let file = e.target.files[0];
+                this.file = file;
+                console.log(this.file);
+            },
 
-    
+            countLetters() {
+                this.letterCount = this.inputText.length;   
+            },
+            countLetters2() {
+                this.letterCount2 = this.inputText2.length; 
+            },
+            countLetters3() {
+                this.letterCount3 = this.inputText3.length; 
+            },
+        }
 }
 </script>
 
@@ -201,4 +233,12 @@ input[type="file"] {
     background-size: cover;
 }
 
+.description-textarea {
+    width: 64,5em; /* Lebar textarea */
+    height: 100px; /* Tinggi textarea */
+    padding: 10px; /* Padding untuk jarak teks dari tepi textarea */
+    user-select: none;
+    resize: none;
+    font-family: sans-serif;
+}
 </style>

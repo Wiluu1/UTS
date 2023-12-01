@@ -2,23 +2,23 @@
     <div class="container">
         <div class="row">
             <div class="col center">
-                <router-link to="/list-user">
-                    <div>
-                        User<hr class="uline-grey">
+                <router-link to="/list-user" @click.native="handleClick('use')">
+                    <div  >
+                        User<hr  :class="{ 'uline-green': $store.state.activeMenu === 'use', 'uline-grey': $store.state.activeMenu !== 'use' }" >
                     </div>
                 </router-link>
             </div>
             <div class="col center">
-                <router-link to="/product-user">
-                    <div>
-                        Product<hr class="uline-grey">
+                <router-link to="/list-voucher" @click.native="handleClick('pr')">
+                    <div >
+                        Product<hr :class="{ 'uline-green': $store.state.activeMenu === 'pr', 'uline-grey': $store.state.activeMenu !== 'pr' }">
                     </div>
                 </router-link>
             </div>
             <div class="col center">
-                <router-link to="/list-voucher">
-                    <div>
-                        Voucher<hr class="uline-green">
+                <router-link to="/list-voucher" @click.native="handleClick('vo')">
+                    <div >
+                        Voucher<hr  :class="{ 'uline-green': $store.state.activeMenu === 'vo', 'uline-grey': $store.state.activeMenu !== 'vo' }">
                     </div>
                 </router-link>
             </div>
@@ -65,8 +65,34 @@
         name: 'Menu',
         data(){
             return {
-                
+           
+                klik: true,
             }
+        },
+        
+        methods: {
+            handleClick(menu) {
+                this.$store.dispatch('setActiveMenu', menu);
+                console.log(this.$store.state.activeMenu);
+            },
+            isActive(menu) {
+                this.$store.commit('setActiveMenu', menu);
+            },
+        },
+        computed: {
+            activeMenu() {
+                return this.$store.getters.activeMenu;
+            },
         },
     }
 </script>
+
+<style>
+.uline-green {
+    border: 1px solid #10B989; margin: 5px 0;
+}
+
+.uline-grey {
+    border: 1px solid #D1D1D1; margin: 5px 0;
+}
+</style>

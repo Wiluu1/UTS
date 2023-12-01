@@ -6,9 +6,14 @@ Vue.use(Vuex)
 
 const state = {
 	items: [],
+	activeMenu: 'use',
 }
 
 const mutations = {
+	setActiveMenu(state, menu) {
+		state.activeMenu = menu;
+	  },
+
 	updateQty(state, payload){
 		axios.put('http://localhost:3000/items/' + payload.id, payload)
 	},
@@ -82,10 +87,21 @@ const actions = {
 			console.log(e)
 		}
 	},
+	setActiveMenu(context, menu) {
+		context.commit('setActiveMenu', menu);
+	},
 }
+
+const store = new Vuex.Store({
+    // ...
+    getters: {
+        activeMenu: state => state.activeMenu,
+    },
+});
 
 export default new Vuex.Store({
 	state,
 	mutations,
-	actions
+	actions,
+	store
 })
