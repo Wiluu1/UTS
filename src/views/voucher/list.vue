@@ -44,7 +44,7 @@
                             <td class="center" ><label class="label-green">{{ item.valid_from }}</label></td>
                             <td class="center" ><label class="label-green">{{ item.valid_until }}</label></td>
                             <td class="center">
-                                <div v-if="item.status === 1">
+                                <div v-if="item.status === 'Active'">
                                     <label class="label-green">Active</label>
                                 </div>
                                 <div v-else="item.status">
@@ -91,18 +91,18 @@ export default {
                     id: "1",
                     voucher_code: "ABC123",
                     voucher_name: "Wily",
-                    valid_from: "20-11-2023",
-                    valid_until: "25-11-2023",
-                    status: 1,
+                    valid_from: "2023-11-25",
+                    valid_until: "2023-12-25",
+                    status: 'Active',
                     urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
                     id: "1",
                     voucher_code: "ABC123",
                     voucher_name: "Ramadhan",
-                    valid_from: "20-11-2023",
-                    valid_until: "25-11-2023",
-                    status: 2,
+                    valid_from: "2023-11-25",
+                    valid_until: "2023-11-26",
+                    status: 'Active',
                     urlImg: '../../assets/icons/dcsopi.jpg'
                     
                 },
@@ -135,6 +135,17 @@ export default {
                 }
             ]
         }
+    }
+}
+function validateVoucher(){
+    var tanggalTenggang = new Date(document.getElementById('valid_until').value);
+    var statusVoucher = document.getElementById('status').value;
+    var today = new Date();
+
+    if(tanggalTenggang <= today){
+        statusVoucher === 'Inactive';
+    }else{
+        statusVoucher === 'Active';
     }
 }
 </script>

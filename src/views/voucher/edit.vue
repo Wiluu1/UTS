@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="mr40 mt20">
-                    <router-link to="/list-user">
+                    <router-link to="/list-voucher">
                         <img src="../../assets/icons/back.svg">
                     </router-link>
                 </div>
@@ -56,7 +56,7 @@
                     v-model="inputText3" :maxlength="500"
                     class=" form-text description-textarea" 
                     placeholder="Masukan voucher description"></textarea>
-                    <div class="p-kanan p-kanan-desk" >{{ letterCount3 }} | 500</div>                        
+                    <div class="p-kanan p-kanan-desk" > | {{ letterCount3 }} /500</div>                        
                 </div>
             </div>
             <div class="mt30 row">
@@ -139,7 +139,7 @@ import List from "../voucher/list.vue"
 export default {
     data(){
         return{
-            name: 'detail-user',
+            name: 'detail-voucher',
             imageUrl: null,
             defaultImageUrl: require('../../assets/icons/addimg.jpeg'),
         }
@@ -147,15 +147,17 @@ export default {
 	
 
     methods: {
-            handleFileChange(event) {
-                const file = event.target.files[0];
-                if (file) {
-                    this.imageUrl = URL.createObjectURL(file);
-                } else {
-                    this.imageUrl = null; // Atur ke null jika tidak ada gambar yang dipilih
-                }
-            },
-        }
+        handleFileChange(event) {
+            const file = event.target.files[0];
+            if (file) {
+                this.imageUrl = URL.createObjectURL(file);
+            } else {
+                this.imageUrl = null; // Atur ke null jika tidak ada gambar yang dipilih
+            }
+        },
+    }
+
+    
 }
 </script>
 
