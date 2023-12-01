@@ -100,7 +100,7 @@ export default {
                     voucher_code: "ABC123",
                     voucher_name: "Ramadhan",
                     valid_from: "25-11-2023",
-                    valid_until: "25-12-2023",
+                    valid_until: "26-11-2023",
                     status: 'Active',
                     urlImg: '../../assets/icons/dcsopi.jpg'
                     
@@ -135,5 +135,32 @@ export default {
             ]
         }
     }
+}
+
+function validateVoucher() {
+    var tanggalTenggangInput = document.getElementById('valid_until');
+    var statusVoucher = document.getElementById('status');
+
+    // Mendapatkan nilai tanggal dari elemen input
+    var tanggalTenggangValue = tanggalTenggangInput.value;
+
+    // Membuat objek Date dari nilai tanggal
+    var tanggalTenggang = new Date(tanggalTenggangValue);
+
+    // Mendapatkan format lokal dari tanggal
+    var formattedDate = tanggalTenggang.toLocaleDateString();
+
+    // Menetapkan nilai kembali ke elemen input dengan format tanggal
+    tanggalTenggangInput.value = formattedDate;
+
+    var today = new Date();
+
+    // Membandingkan tanggal dan status untuk menentukan status voucher
+    if (tanggalTenggang <= today && statusVoucher.value === 'Active') {
+        statusVoucher.value = 'Inactive';
+    } else {
+        statusVoucher.value = 'Active';
+    }
+
 }
 </script>
