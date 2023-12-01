@@ -16,10 +16,10 @@
             <div class="mt50 right">
                 <img :src="urlImg" width="50%">
                 <div class="mp">
-                    <p class="mp abu">CERIA3</p>
-                    <h2 class="mp">BOMBASTIS 11.11</h2>
+                    <p class="mp abu">CERIA1</p>
+                    <h2 class="mp">PROMO</h2>
                     <p class="detail-title-bold mp">Voucher Description</p>
-                    <P class="mp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deleniti alias impedit debitis voluptatem eligendi itaque ea inventore magni adipisci aperiam eius, nemo esse distinctio porro! Rerum error harum quos maiores, molestiae ea inventore? Porro veritatis voluptatem velit nam magni necessitatibus explicabo? Asperiores rem aspernatur pariatur excepturi quisquam et numquam.</P>
+                    <P class="mp"></P>
                     
                     <div class="mp">
                         <p class="detail-title-bold mp">Voucher Category:</p>
@@ -44,7 +44,7 @@ export default {
     List,
     data() {
         return {
-            urlImg:  require('../../assets/images/voucherimage.jpeg'),
+            urlImg:  require('../../assets/icons/dcsopi.jpg'),
         };
     },
 }

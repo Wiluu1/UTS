@@ -77,6 +77,8 @@
 <script>
 import Menu from "../../components/menu.vue"
 
+var valid_until;
+var statusVoucher = 'Active';
 
 export default {
 	name: 'list-voucher',
@@ -88,47 +90,29 @@ export default {
             list_voucher: [
                 {
                     id: "1",
-                    voucher_code: "ABC123",
-                    voucher_name: "Wily",
-                    valid_from: "25-11-2023",
-                    valid_until: "25-12-2023",
-                    status: 'Active',
+                    voucher_code: "CERIA1",
+                    voucher_name: "PROMO",
+                    valid_from: "01-06-2023",
+                    valid_until: "03-06-2023",
+                    status: statusVoucher,
                     urlImg: '../../assets/icons/dcsopi.jpg'
                 },
                 {
                     id: "2",
-                    voucher_code: "ABC123",
-                    voucher_name: "Ramadhan",
-                    valid_from: "25-11-2023",
-                    valid_until: "26-11-2023",
-                    status: 'Active',
+                    voucher_code: "CERIA2",
+                    voucher_name: "PROMO",
+                    valid_from: "04-06-2023",
+                    valid_until: "06-06-2023",
+                    status: statusVoucher,
                     urlImg: '../../assets/icons/dcsopi.jpg'
                     
                 },
                 {
                     id: "3",
-                    voucher_code: "ABC123",
-                    voucher_name: "Taufiq",
-                    valid_from: "20-11-2023",
-                    valid_until: "25-11-2023",
-                    status: 1,
-                    urlImg: '../../assets/icons/dcsopi.jpg'
-                },
-                {
-                    id: "4",
-                    voucher_code: "ABC123",
-                    voucher_name: "Yuriza",
-                    valid_from: "20-11-2023",
-                    valid_until: "25-11-2023",
-                    status: 2,
-                    urlImg: '../../assets/icons/dcsopi.jpg'
-                },
-                {
-                    id: "5",
-                    voucher_code: "ABC123",
-                    voucher_name: "Danis",
-                    valid_from: "20-11-2023",
-                    valid_until: "25-11-2023",
+                    voucher_code: "CERIA3",
+                    voucher_name: "PROMO 12.12",
+                    valid_from: "07-06-2023",
+                    valid_until: "09-06-2023",
                     status: 1,
                     urlImg: '../../assets/icons/dcsopi.jpg'
                 }
@@ -137,10 +121,8 @@ export default {
     }
 }
 
-function validateVoucher() {
-    var tanggalTenggangInput = document.getElementById('valid_until');
-    var statusVoucher = document.getElementById('status');
-
+function validateVoucher(statusVoucher) {
+    var tanggalTenggangInput = valid_until;
     // Mendapatkan nilai tanggal dari elemen input
     var tanggalTenggangValue = tanggalTenggangInput.value;
 
@@ -157,10 +139,10 @@ function validateVoucher() {
 
     // Membandingkan tanggal dan status untuk menentukan status voucher
     if (tanggalTenggang <= today && statusVoucher.value === 'Active') {
-        statusVoucher.value = 'Inactive';
+        statusVoucher = 'Inactive';
     } else {
-        statusVoucher.value = 'Active';
+        statusVoucher = 'Active';
     }
-
+    return statusVoucher;
 }
 </script>
