@@ -1,10 +1,13 @@
 # web23
 
-> Fullstack Developer Skill Test
+> FE Template
 
 ## Build Setup
 
 ``` bash
+# run local json
+json-server db.json
+
 # install dependencies
 npm install
 
