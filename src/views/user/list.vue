@@ -20,10 +20,11 @@
                         type="text"
                         id="deskripsi"
                         placeholder="Tambah deskripsi..."
+                        v-model="search"
                     />
                 </div>
                 <div class="col flex">
-                    <button class="bt-blue">Filter</button>
+                    <button @click="onSearchUser" class="bt-blue">Filter</button>
                 </div>
             </div>
             <div class="mt50">

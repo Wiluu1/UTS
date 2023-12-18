@@ -16,7 +16,7 @@
             <div class="mt50 right">
                 <img :src="urlImg" width="50%">
                 <div class="mp ">
-                    <p class="mp abu">CERIA3</p>
+                    <p class="mp abu">CERIA1</p>
                     <h2 class="mp">BOMBASTIS 11.11</h2>
                     <p class="detail-title-bold mp">Voucher Description</p>
                     <P class="mp abu desk">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, deleniti alias impedit debitis voluptatem eligendi itaque ea inventore magni adipisci aperiam eius, nemo esse distinctio porro! Rerum error harum quos maiores, molestiae ea inventore? Porro veritatis voluptatem velit nam magni necessitatibus explicabo? Asperiores rem aspernatur pariatur excepturi quisquam et numquam.</P>
@@ -42,7 +42,7 @@
                 <div class="container2">
                     <p class="detail-title-bold">Voucher Status</p>
                     <hr class="tebal">
-                    <label class="label-green c">Activae</label>
+                    <label class="label-green c">Active</label>
                 </div>
                 <div class="container2">
                     <p class="detail-title-bold">Valid From</p>
